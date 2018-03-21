@@ -20,6 +20,7 @@ export default {
       this.calcVH()
       window.addEventListener('onorientationchange', this.calcVH);
     }
+    document.querySelector('body').setAttribute('style', 'font-size:' + document.documentElement.clientHeight * 0.04 + 'px;');
   },
   methods: {
     calcVH () {
@@ -38,7 +39,7 @@ html{
   background: #eee;
 }
 body {
-  font-size: 5vmin;
+  /* font-size: 4vh; */
   margin: 0;
   user-select: none;
   display: flex;
