@@ -108,6 +108,11 @@
   select {
     background: white;
     border: none;
+  }
+  option{
+    font-size: 20%;
+  }
+  label {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,28 +142,27 @@
 
   .category-selection{
     display: flex;
+    height: 40vh;
     flex-wrap: wrap;
     justify-content: center;
     font-weight: normal;
-  }
-  #category-selection input[type="radio"] {
-    opacity: 0;
-    width: 0;
-    height: 0;
+    width: 100%;
   }
   #category-selection input[type="radio"]:checked + label {
     background: #666;
     color: white;
   }
+  .radio {
+    width: 40%;
+    height: 40%;
+    margin: 2%;
+  }
   #category-selection label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30vmin;
-    height: 30vmin;
-    background: white;
-    margin: 2vmin;
+    width: 100%;
+    /* height: 90%; */
+    border-radius: 2vh;
     transition: .2s;
+    font-size: 65%;
     cursor: pointer;
   }
   #category-selection input {
