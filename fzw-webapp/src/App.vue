@@ -14,7 +14,20 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  mounted () {
+    if (navigator.userAgent.indexOf('Chrome') !== -1) {
+      this.calcVH()
+      window.addEventListener('onorientationchange', this.calcVH);
+    }
+  },
+  methods: {
+    calcVH () {
+      var vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      document.querySelector('#app').setAttribute('style', 'height:' + vH + 'px;');
+      // document.querySelector('#app > div').setAttribute('style', 'height:' + vH + 'px;');
+    }
+  }
 }
 </script>
 
