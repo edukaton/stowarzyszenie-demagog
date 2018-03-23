@@ -32,19 +32,27 @@
             <div class="category-selection">
               <div class="radio">
                 <input v-model="userInfo.category" id="rozrywka" type="radio" value="entertainment"></input>
-                <label for="rozrywka">rozrywka</label>
+                <label for="rozrywka">
+                  <img src="static/img/004-confetti.svg" alt="">Rozrywka
+                </label>
               </div>
               <div class="radio">
                 <input v-model="userInfo.category" id="sport" type="radio" value="sport">
-                <label for="sport">sport</label>
+                <label for="sport">
+                  <img src="static/img/001-basketball.svg" alt="">Sport
+                </label>
               </div>
               <div class="radio">
                 <input v-model="userInfo.category" id="nauka" type="radio" value="science"></input>
-                <label for="nauka">nauka</label>
+                <label for="nauka">
+                  <img src="static/img/003-startup.svg" alt="">Nauka
+                </label>
               </div>
               <div class="radio">
                 <input v-model="userInfo.category" id="polityka" type="radio" value="politics"></input>
-                <label for="polityka">polityka</label>
+                <label for="polityka">
+                  <img src="static/img/002-white-house.svg" alt="">Polityka
+                </label>
               </div>
             </div>
           </div>
@@ -116,17 +124,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 200%;
-  }
-
-  .gender {
-    color: #777;
+    background: var(--color-blue);
+    color: white;
+    width: 100%;
+    /* height: 90%; */
+    border-radius: 2vh;
+    transition: .2s;
+    font-size: 50%;
+    cursor: pointer;
     display: flex;
-    flex-direction: row;
-    width: 75vmin;
-    justify-content: space-between;
+    flex-direction: column;
   }
-
   .error{
     background: red;
   }
@@ -146,27 +154,24 @@
     flex-wrap: wrap;
     justify-content: center;
     font-weight: normal;
-    width: 100%;
+    width: 40vh;
   }
   #category-selection input[type="radio"]:checked + label {
-    background: #666;
-    color: white;
+    background: var(--color-orange);
+    box-shadow: 0 1vh 5vh 0 rgba(239, 66, 12, 0.5);
   }
   .radio {
-    width: 40%;
-    height: 40%;
-    margin: 2%;
+    width: 44%;
+    height: 44%;
+    margin: 3%;
   }
-  #category-selection label {
-    width: 100%;
-    /* height: 90%; */
-    border-radius: 2vh;
-    transition: .2s;
-    font-size: 65%;
-    cursor: pointer;
+
+  img {
+    height: 70%;
   }
   #category-selection input {
     margin: 0;
     display: none;
+    color: white;
   }
 </style>
