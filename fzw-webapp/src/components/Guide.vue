@@ -37,10 +37,19 @@ export default {
 <!-- Scoped component css -->
 <!-- It only affect current component -->
 <style scoped>
+body {
+  background: #3A5172;
+}
 #guide {
-  text-align: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .guide {
   height: auto;
+  padding: 5vh;
+  box-sizing: border-box;
+  font-size: 80%;
 }
 </style>
