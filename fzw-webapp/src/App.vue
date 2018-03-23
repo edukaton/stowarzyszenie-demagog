@@ -122,6 +122,30 @@ button {
   font-size: 65%;
   letter-spacing: 0.1em;
 }
+.main-cta{
+  background: var(--color-orange);
+  box-shadow: 0 1vh 2vh rgba(239, 16, 22, .6);
+}
+.main-cta:hover{
+  background: #E63F0C;
+}
+.secondary-cta{
+  background: var(--color-blue);
+  box-shadow: 0 1vh 2vh rgba(10, 38, 79, .5);
+}
+.secondary-cta:hover{
+  background: var(--color-blue);
+}
+.ghost-cta{
+  background: var(--color-white);
+  color: var(--color-blue);
+  border: 1vh var(--color-blue);
+}
+.ghost-cta:hover{
+  background: #E63F0C;
+  border-radius: 2.5vh;
+  text-decoration: none;
+}
 .input{
   display: flex;
   align-items: flex-start;
@@ -136,8 +160,9 @@ button {
 input{
   font-family: 'Montserrat', sans-serif;
   border: none;
-  padding: 3vmin;
+  box-sizing: border-box;
   text-align: center;
+  padding: 3vh;
   font-size: 120%;
   font-weight: bold;
   color: inherit;
