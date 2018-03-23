@@ -177,6 +177,6 @@ input[type='text'], input[type='number']{
   width: 100%;
   box-shadow: 0 1vh 2vh rgba(10, 38, 79, 1);
   border-radius: 2.5vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 </style>
