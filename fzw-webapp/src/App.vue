@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&subset=latin-ext');
 
 :root {
   --color-orange: #EF420C;
@@ -53,8 +53,28 @@ body {
   background: black;
   overflow: hidden;
 }
-h2, h3, h4, h5 {
+h2, h3, h4, h5, p {
   margin-top: 0;
+}
+h1 {
+  font-size: 150%;
+  font-weight: bold;
+}
+h2 {
+  font-size: 120%;
+  font-weight: light;
+}
+h3 {
+  font-size: 110%;
+  font-weight: light;
+}
+h4 {
+  font-size: 90%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+p {
+  font-weight: lighter;
 }
 #logo {
   height: 20%;
@@ -108,19 +128,19 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #aaa;
-  font-weight: bold;
-  font-size: 80%;
 }
 .radio{
   display: flex;
   font-size: inherit;
 }
 input{
+  font-family: 'Montserrat', sans-serif;
   border: none;
   padding: 3vmin;
-  font-size: inherit;
-  color: #777;
+  text-align: center;
+  font-size: 120%;
+  font-weight: bold;
+  color: inherit;
 }
 input[type='text'], input[type='number']{
   width: 100%;
