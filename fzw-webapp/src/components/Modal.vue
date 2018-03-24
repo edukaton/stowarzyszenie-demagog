@@ -24,9 +24,6 @@ export default {
 </script>
 
 <style scoped>
-h1{
-  margin-top: 1em;
-}
   .modal{
     position: fixed;
     z-index: 99;

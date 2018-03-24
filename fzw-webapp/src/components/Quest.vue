@@ -180,11 +180,6 @@ export default {
     align-items: center;
     justify-content: center;
   }
-  #quest h1 {
-    color: #2c3e50;
-    font-weight: 300;
-    margin: 0;
-  }
   #counter{
     width: 18vh;
   }

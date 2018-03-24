@@ -95,24 +95,6 @@
 </script>
 
 <style scoped>
-  #intro {
-    text-align: center;
-  }
-
-  #intro h1 {
-    color: #2c3e50;
-    font-weight: 300;
-  }
-
-  .user-info-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .user-info-form div{
-    margin: 2vmin;
-  }
   select {
     background: white;
     border: none;
