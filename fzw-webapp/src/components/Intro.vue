@@ -93,11 +93,15 @@
 
 <style scoped>
   select {
+    font-family: 'Montserrat';
     background: white;
     border: none;
+    font-weight: 900;
+    font-size: 175%;
+    color: var(--color-blue);
   }
   option{
-    font-size: 20%;
+    font-size: 50%;
   }
   label {
     display: flex;
