@@ -4,7 +4,6 @@
       <div v-if="page === 0" class="">
         <h1>Cześć!</h1>
         <p>Jesteśmy tu po to, aby sprawdzić Twoją odporność na manipulacje w internecie.</p>
-        <button @click="page++">zaczynamy</button>
       </div>
 
       <div v-show="page === 1" class="">
@@ -12,7 +11,6 @@
         <div class="input">
           <input v-model="userInfo.name" type="text" name="">
         </div>
-        <button @click="page++">dalej</button>
       </div>
 
     <div v-show="page === 2" class="">
@@ -22,7 +20,6 @@
           <option v-for="(item, value) in [0,10,20,30,40,50,60,70,80,90,100]" value="">{{item}}%</option>
         </select>
       </div>
-      <button @click="page++">dalej</button>
     </div>
 
       <div v-show="page === 3" class="">
@@ -56,10 +53,10 @@
               </div>
             </div>
           </div>
-          <button @click="goToGuide">dalej</button>
         </div>
       </div>
 
+      <button class="main-cta" @click="incrementPage">dalej</button>
   </div>
 </template>
 
