@@ -9,7 +9,7 @@
       <div v-show="page === 1" class="">
         <h3>Jak mamy się do Ciebie zwracać?</h3>
         <div class="input">
-          <input v-model="userInfo.name" type="text" name="">
+          <input ref="name" v-model="userInfo.name" type="text">
         </div>
       </div>
 
@@ -79,9 +79,9 @@
     methods: {
       incrementPage () {
         ++this.page
-      },
-      goToGuide () {
-        if (this.category !== '') {
+        if (this.page === 1) {
+          this.$nextTick(() => this.$refs.name.focus())
+        } else if (this.page === 4 && this.category !== '') {
           this.$store.commit('setUserInfo', this.userInfo)
           this.$router.push('/guide');
         }
