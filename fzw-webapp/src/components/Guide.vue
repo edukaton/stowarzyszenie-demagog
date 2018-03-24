@@ -37,13 +37,16 @@ export default {
 <!-- It only affect current component -->
 <style scoped>
 body {
-  background: #3A5172;
 }
 #guide {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
+  background: #3A5172;
+}
+strong{
+  font-weight: bold;
 }
 .guide {
   height: auto;
