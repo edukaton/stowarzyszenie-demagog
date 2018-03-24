@@ -1,11 +1,10 @@
 <template>
   <div id="guide">
     <div class="card guide">
-      <h1>Wskazówka</h1>
+      <h4>Już prawie gotowe!</h4>
       <p>Za chwilę zobaczysz {{ numOfQuestions }} przykładów treści, które pojawiły się w sieci.</p>
       <p>Decyzja należy do Ciebie – klikasz czy nie?</p>
-      <p>Pamiętaj: na otwarcie lub odrzucenie treści masz tylko {{ questionTimeSeconds }} sekund!</p>
-      <button v-on:click="startQuiz">ok, zaczynamy!</button>
+      <p>Pamiętaj: na otwarcie lub odrzucenie treści masz tylko <strong>{{ questionTimeSeconds }} sekund</strong>!</p>
       <button class="main-cta" v-on:click="startQuiz">zaczynamy</button>
     </div>
   </div>

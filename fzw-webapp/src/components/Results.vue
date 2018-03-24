@@ -1,13 +1,12 @@
 <template>
 <div id="results">
-  <h1>{{this.userInfo.name}}...</h1>
-  <h2>jesteś chroniony na poziomie:</h2>
-  <pie-chart :textPercent="true" :numerator="numOfCorrectAnswers" :denominator="numOfAnswers"/>
-  <p>
-    Udzielono {{ numOfCorrectAnswers }} poprawnych odpowiedzi na {{ numOfAnswers }} pytań. Na {{ numOfOmmitedQuestions }} nie udzielono odpowiedzi.
-  </p>
+  <div>
+    <h1>{{this.userInfo.name}}</h1>
+    <h2>Twoja ochrona jest na poziomie:</h2>
+    <pie-chart :textPercent="true" :numerator="numOfCorrectAnswers" :denominator="numOfAnswers"/>
+  </div>
+  <p>Twoja odporność na:</p>
   <div class="results">
-    <h1>Twoja odporność na:</h1>
     <div @click="emo=!emo" class="vulnerability">
       <pie-chart :textPercent="true" :numerator="numOfCorrectEmotionalLanguageAnswers" :denominator="numOfEmotionalLanguageAnswers" />
       <h5>Emocjonalny język</h5>

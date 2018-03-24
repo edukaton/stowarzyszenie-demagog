@@ -2,19 +2,19 @@
   <div id="intro">
     <img id="logo" :class="{ land:(page === 0) }" src="static/img/icons/fzw_logo.svg" alt="">
       <div v-if="page === 0" class="">
-        <h1>Cześć!</h1>
-        <p>Jesteśmy tu po to, aby sprawdzić Twoją odporność na manipulacje w internecie.</p>
+        <p>Cześć!</p>
+        <p>Sprawdź swoją odporność na manipulacje w internecie.</p>
       </div>
 
       <div v-show="page === 1" class="">
-        <h3>Jak mamy się do Ciebie zwracać?</h3>
+        <p>Jak mamy się do Ciebie zwracać?</p>
         <div class="input">
           <input ref="name" v-model="userInfo.name" type="text">
         </div>
       </div>
 
     <div v-show="page === 2" class="">
-      <h3>Na ile oceniasz swoją odporność na manipulacje?</h3>
+      <p>Na ile oceniasz swoją odporność na manipulacje?</p>
       <div class="input">
         <select class="input" name="">
           <option v-for="(item, value) in [0,10,20,30,40,50,60,70,80,90,100]" value="">{{item}}%</option>
@@ -24,7 +24,7 @@
 
       <div v-show="page === 3" class="">
         <div id="category-selection">
-          <h3>Wybierz obszar, który Cię najbardziej interesuje</h3>
+          <p>Wybierz obszar, który Cię najbardziej interesuje</p>
           <div class="input">
             <div class="category-selection">
               <div class="radio">
