@@ -103,7 +103,7 @@
       </modal>
     </div>
   </div>
-  <button type="button" name="button">sprawdź swoje odpowiedzi</button>
+  <button class="secondary-cta" type="button" name="button">sprawdź swoje odpowiedzi</button>
 </div>
 </template>
 

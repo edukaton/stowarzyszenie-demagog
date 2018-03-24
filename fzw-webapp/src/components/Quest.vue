@@ -21,8 +21,8 @@
             <img :src="q.imageUrl"/>
           </div>
           <div class="buttons">
-            <button class="answer" v-on:click="answer('yes')">klikam</button>
-            <button class="answer" v-on:click="answer('no')">nie klikam</button>
+            <button class="secondary-cta answer" v-on:click="answer('yes')">klikam</button>
+            <button class="secondary-cta answer" v-on:click="answer('no')">nie klikam</button>
           </div>
         </div>
       </transition>
@@ -186,20 +186,16 @@ export default {
   img{
     width: 100%;
   }
+  button.answer{
+    padding: 2vh 1vh;
+    width: 45%;
+  }
 
   .buttons {
     display: flex;
     flex-direction: row;
-  }
-
-  button.answer {
-    width: 35vmin;
-    border: #666 .75vmin solid;
-    color: #666;
-    background: #eee;
-    padding: 2vmin 3vmin;
-    box-shadow: none;
-    border-radius: 0;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .defs-only {

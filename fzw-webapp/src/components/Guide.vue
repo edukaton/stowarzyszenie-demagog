@@ -6,6 +6,7 @@
       <p>Decyzja należy do Ciebie – klikasz czy nie?</p>
       <p>Pamiętaj: na otwarcie lub odrzucenie treści masz tylko {{ questionTimeSeconds }} sekund!</p>
       <button v-on:click="startQuiz">ok, zaczynamy!</button>
+      <button class="main-cta" v-on:click="startQuiz">zaczynamy</button>
     </div>
   </div>
 </template>
