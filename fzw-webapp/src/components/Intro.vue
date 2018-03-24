@@ -1,6 +1,6 @@
 <template>
   <div id="intro">
-    <img id="logo" src="static/img/icons/fzw_logo.svg" alt="">
+    <img id="logo" :class="{ land:(page === 0) }" src="static/img/icons/fzw_logo.svg" alt="">
       <div v-if="page === 0" class="">
         <h1>Cześć!</h1>
         <p>Jesteśmy tu po to, aby sprawdzić Twoją odporność na manipulacje w internecie.</p>
