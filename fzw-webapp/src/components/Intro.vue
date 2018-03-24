@@ -1,7 +1,7 @@
 <template>
   <div id="intro">
     <img id="logo" :class="{ land:(page === 0) }" src="static/img/icons/fzw_logo.svg" alt="">
-      <div v-if="page === 0" class="">
+      <div v-show="page === 0" class="">
         <p>Cześć!</p>
         <p>Sprawdź swoją odporność na manipulacje w internecie.</p>
       </div>
