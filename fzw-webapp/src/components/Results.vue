@@ -21,12 +21,16 @@
   </div>
   <p>Twoja odporność na:</p>
   <div class="results">
-    <div @click="emo=!emo" class="vulnerability">
+    <div @click="emo=true" class="vulnerability">
       <pie-chart :textPercent="true" :numerator="numOfCorrectEmotionalLanguageAnswers" :denominator="numOfEmotionalLanguageAnswers" />
       <h5>Emocjonalny język</h5>
-      <modal v-show="emo">
+    </div>
+    <modal :show="emo" @close="emo=false">
+      <div slot="1">
         <h2>Emocjonalny język</h2>
         <p>W tekstach informacyjnych granica między faktem a opinią powinna być wyraźnie zaznaczona. Jednak autorzy artykułów sięgają niekiedy po emocjonalny język (zwłaszcza w tytułach), by czytelnik w z góry określony sposób zinterpretował daną informację.</p>
+      </div>
+      <div slot="2">
         <p>PORADA:
           <ul>
             <li>Sprawdź, czy w tytule pojawiają się silnie emocjonalne sformułowania, typu: “Masakra lewaków”, “Ostateczne uporanie się”, “Furia aktora”.</li>
@@ -34,39 +38,45 @@
             <li>Zwróć uwagę, czy autor tekstu odróżnił wyraźnie relacjonowanie faktów od opinii. </li>
           </ul>
         </p>
-      </modal>
-    </div>
+      </div>
+    </modal>
 
-    <div @click="bait=!bait" class="vulnerability">
+    <div @click="bait=true" class="vulnerability">
       <pie-chart :textPercent="true" :numerator="numOfCorrectClickbaitAnswers" :denominator="numOfClickbaitAnswers" />
       <h5>Clickbait</h5>
-      <transition name="fade">
-        <modal v-show="bait" @close="bait=false">
-          <h2>Clickbait</h2>
-          <p>To takie sformułowanie tytułu, które sztucznie wzbudza ciekawość czytelnika poprzez ukrycie przed nim kluczowych informacji. Nadrzędnym celem clickbaitów jest nakłonienie czytelnika do kliknięcia w informację i zwiększenia ruchu na stronie.</p>
-          <p>PORADA:
-            <ul>
-              <li>
-                Zwróć uwagę na słowa kluczowe, takie jak “szok”, “niesamowite”, “skandal”.
-              </li>
-              <li>
-                Tytuły wiarygodnych artykułów zazwyczaj nie są pisane WIELKIMI literami.
-              </li>
-              <li>
-                Zastanów się, czy autor celowo nie ukrył przed Tobą informacji, nie uwzględniając jej w tytule.
-              </li>
-            </ul>
-          </p>
-        </modal>
-      </transition>
     </div>
+    <modal :show="bait" @close="bait=false">
+      <div slot="1">
+        <h2>Clickbait</h2>
+        <p>To takie sformułowanie tytułu, które sztucznie wzbudza ciekawość czytelnika poprzez ukrycie przed nim kluczowych informacji. Nadrzędnym celem clickbaitów jest nakłonienie czytelnika do kliknięcia w informację i zwiększenia ruchu na stronie.</p>
+      </div>
+      <div slot="2">
+        <p>PORADA:
+          <ul>
+            <li>
+              Zwróć uwagę na słowa kluczowe, takie jak “szok”, “niesamowite”, “skandal”.
+            </li>
+            <li>
+              Tytuły wiarygodnych artykułów zazwyczaj nie są pisane WIELKIMI literami.
+            </li>
+            <li>
+              Zastanów się, czy autor celowo nie ukrył przed Tobą informacji, nie uwzględniając jej w tytule.
+            </li>
+          </ul>
+        </p>
+      </div>
+    </modal>
 
-    <div @click="lie=!lie" class="vulnerability">
+    <div @click="lie=true" class="vulnerability">
       <pie-chart :textPercent="true" :numerator="numOfCorrectFakeNewsAnswers" :denominator="numOfFakeNewsAnswers" />
       <h5>Fałszywe treści</h5>
-      <modal v-show="lie" @close="lie=false">
+    </div>
+    <modal :show="lie" @close="lie=false">
+      <div slot="1">
         <h2>Fałszywe treści</h2>
         <p>Terminem tym określa się całkowicie wymyślone lub zmanipulowane informacje przypominające wiarygodne dziennikarstwo. Twórcy fake newsów chcą przyciągnąć uwagę odbiorców, by zrealizować z góry założony cel, np. wygenerować zysk lub przekonać do swoich poglądów</p>
+      </div>
+      <div slot="2">
         <p>PORADA:
           <ul>
             <li>
@@ -80,13 +90,15 @@
             </li>
           </ul>
         </p>
-      </modal>
-    </div>
+      </div>
+    </modal>
 
-    <div @click="manipulation=!manipulation" class="vulnerability">
+    <div @click="manipulation=true" class="vulnerability">
       <pie-chart :textPercent="true" :numerator="numOfCorrectImageManipulationAnswers" :denominator="numOfImageManipulationAnswers" />
       <h5>Manipulację obrazem</h5>
-      <modal v-show="manipulation" @close="manipulation=false">
+    </div>
+    <modal :show="manipulation" @close="manipulation=false">
+      <div slot="1">
         <h2>Manipulacja obrazem</h2>
         <p>Sytuacja, w której:
           <ul>
@@ -99,22 +111,24 @@
             <li>prezentowana na zdjęciu postać wypada szczególnie korzystnie lub niekorzystnie w kontekście treści artykułu</li>
           </ul>
         </p>
+      </div>
+      <div slot="2">
+        <p>PORADA:
+          <ul>
+              <li>
+                Zastanów się, czy jest podany autor i data publikacji zdjęcia.
+              </li>
+              <li>
+                Sprawdź, czy obraz nie jest celowo przerobiony w programie graficznym lub prezentuje kogoś w wyjątkowo niekorzystny sposób
+              </li>
+              <li>
+                Do uzyskania tych informacji przydatne może być odwrócone wyszukiwanie obrazu przez images.google.com.
+              </li>
+          </ul>
+        </p>
+      </div>
+    </modal>
 
-          <p>PORADA:
-            <ul>
-                <li>
-                  Zastanów się, czy jest podany autor i data publikacji zdjęcia.
-                </li>
-                <li>
-                  Sprawdź, czy obraz nie jest celowo przerobiony w programie graficznym lub prezentuje kogoś w wyjątkowo niekorzystny sposób
-                </li>
-                <li>
-                  Do uzyskania tych informacji przydatne może być odwrócone wyszukiwanie obrazu przez images.google.com.
-                </li>
-            </ul>
-          </p>
-      </modal>
-    </div>
   </div>
   <button class="secondary-cta check" type="button" name="button">sprawdź swoje odpowiedzi</button>
 </div>
@@ -204,7 +218,7 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .results > div {
+  .vulnerability {
     width: 50%;
 
   }
