@@ -2,8 +2,22 @@
 <div id="results">
   <div>
     <h1>{{this.userInfo.name}}</h1>
-    <h2>Twoja ochrona jest na poziomie:</h2>
-    <pie-chart :textPercent="true" :numerator="numOfCorrectAnswers" :denominator="numOfAnswers"/>
+    <h5>Twoja ochrona jest na poziomie:</h5>
+
+    <svg viewBox="0 0 150 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <clipPath id="cut-off-bottom">
+          <rect x="25" y="0" width="100" :height="100 - percentTemp" />
+        </clipPath>
+      </defs>
+
+      <image xlink:href="static/img/tarcza_02.svg" x="25" y="0" width="100" height="100"/>
+      <image xlink:href="static/img/tarcza_01.svg" x="25" y="0" width="100" height="100" clip-path="url(#cut-off-bottom)"/>
+      <text x="75" y="50" font-size="25">{{ percentTemp }}%</text>
+
+    </svg>
+
+    <!-- <pie-chart :textPercent="true" :numerator="numOfCorrectAnswers" :denominator="numOfAnswers"/> -->
   </div>
   <p>Twoja odporność na:</p>
   <div class="results">
@@ -85,7 +99,7 @@
             <li>prezentowana na zdjęciu postać wypada szczególnie korzystnie lub niekorzystnie w kontekście treści artykułu</li>
           </ul>
         </p>
-          
+
           <p>PORADA:
             <ul>
                 <li>
@@ -102,7 +116,7 @@
       </modal>
     </div>
   </div>
-  <button class="secondary-cta" type="button" name="button">sprawdź swoje odpowiedzi</button>
+  <button class="secondary-cta check" type="button" name="button">sprawdź swoje odpowiedzi</button>
 </div>
 </template>
 
@@ -125,6 +139,9 @@
       }
     },
     computed: {
+      percentTemp () {
+        return Math.floor(this.numOfCorrectAnswers / this.numOfAnswers * 100)
+      },
       numOfAnswers () {
         return this.$store.getters.numOfQuizAnswers;
       },
@@ -193,5 +210,15 @@
   }
   .results svg{
 
+  }
+  text {
+    fill: white;
+    dominant-baseline: central;
+    text-anchor: middle;
+    font-weight: bold;
+  }
+  image {
+    width: 100%;
+    height: 100%;
   }
 </style>
