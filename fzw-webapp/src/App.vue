@@ -179,4 +179,14 @@ input[type='text'], input[type='number']{
   border-radius: 2.5vh;
   overflow-y: auto;
 }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter-active {
+  /* transition-delay: .5s; */
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>
