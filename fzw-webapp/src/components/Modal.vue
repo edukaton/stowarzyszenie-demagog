@@ -8,8 +8,8 @@
           <!-- <slot></slot> -->
           <button class="main-cta" @click="incrementPage" type="button" name="button">
             <div v-show="page === 0">Zwiększ odporność</div>
-            <div v-show="page !== slotsNumber">Dalej</div>
-            <div v-show="page === slotsNumber">Teraz już wiem!</div>
+            <div v-show="page !== slotsNumber - 1 && page !== 0">Dalej</div>
+            <div v-show="page === slotsNumber - 1">Teraz już wiem!</div>
           </button>
         </div>
       </div>
@@ -26,7 +26,7 @@ export default {
   },
   data () {
     return {
-      page: 1
+      page: 0
     }
   },
   computed: {
@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     incrementPage () {
-      if (this.page === this.slotsNumber) {
+      if (this.page === this.slotsNumber - 1) {
         this.close()
       } else {
         this.page++
@@ -44,7 +44,7 @@ export default {
     },
     close () {
       setTimeout(() => {
-        this.page = 1
+        this.page = 0
       }, 200)
       this.$emit('close')
     }

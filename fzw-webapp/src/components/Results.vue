@@ -26,11 +26,11 @@
       <h5>Clickbait</h5>
     </div>
     <modal :show="bait" @close="bait=false">
-      <div slot="1">
+      <div slot="0">
         <h2>Clickbait</h2>
         <p>To takie sformułowanie tytułu, które sztucznie wzbudza ciekawość czytelnika poprzez ukrycie przed nim kluczowych informacji. Nadrzędnym celem clickbaitów jest nakłonienie czytelnika do kliknięcia w informację i zwiększenia ruchu na stronie.</p>
       </div>
-      <div slot="2">
+      <div slot="1">
         <p>PORADA:
           <ul>
             <li>
@@ -52,7 +52,7 @@
       <h5>Manipulacja obrazem</h5>
     </div>
     <modal :show="manipulation" @close="manipulation=false">
-      <div slot="1">
+      <div slot="0">
         <h2>Manipulacja obrazem</h2>
         <p>Sytuacja, w której:
           <ul>
@@ -66,7 +66,7 @@
           </ul>
         </p>
       </div>
-      <div slot="2">
+      <div slot="1">
         <p>PORADA:
           <ul>
               <li>
