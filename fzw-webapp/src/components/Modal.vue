@@ -3,7 +3,7 @@
     <transition name="fade">
       <div v-show="show" class="modal card">
         <div class="content">
-          <div style="text-align: right" @click="close()" >x</div>
+          <div style="text-align: right; cursor: pointer" @click="close()" >x</div>
           <slot :name="page"></slot>
           <!-- <slot></slot> -->
           <button class="main-cta" @click="incrementPage" type="button" name="button">

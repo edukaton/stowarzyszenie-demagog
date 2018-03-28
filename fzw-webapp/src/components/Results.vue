@@ -130,7 +130,7 @@
     </modal>
 
   </div>
-  <button class="secondary-cta check" type="button" name="button">sprawdź swoje odpowiedzi</button>
+  <button class="main-cta check" type="button" name="button">sprawdź swoje odpowiedzi</button>
 </div>
 </template>
 
@@ -207,12 +207,12 @@
 <!-- It only affect current component -->
 <style scoped>
   #results {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     overflow: auto;
   }
-
+  .check {
+    padding: 1em;
+    font-size: 60%;
+  }
   .results {
     display: flex;
     flex-direction: row;
@@ -220,10 +220,7 @@
   }
   .vulnerability {
     width: 50%;
-
-  }
-  .results svg{
-
+    cursor: pointer;
   }
   text {
     fill: white;

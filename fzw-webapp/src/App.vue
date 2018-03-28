@@ -102,7 +102,7 @@ p {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  padding: 0 10%;
+  padding: 0 5%;
 }
 @media screen and (min-device-aspect-ratio: 1/1) {
   #app {
@@ -122,6 +122,9 @@ button {
   font-size: 65%;
   letter-spacing: 0.1em;
 }
+button:focus {
+  outline:0;
+}
 .main-cta{
   background: var(--color-orange);
   box-shadow: 0 1vh 2vh rgba(239, 16, 22, .6);
@@ -139,7 +142,7 @@ button {
 .ghost-cta{
   background: var(--color-white);
   color: var(--color-blue);
-  border: 1vh var(--color-blue);
+  box-shadow: 0 0 0 1vh var(--color-blue) inset;
 }
 .ghost-cta:hover{
   background: #E63F0C;
