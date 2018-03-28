@@ -21,26 +21,6 @@
   </div>
   <p>Twoja odporność na:</p>
   <div class="results">
-    <div @click="emo=true" class="vulnerability">
-      <pie-chart :textPercent="true" :numerator="numOfCorrectEmotionalLanguageAnswers" :denominator="numOfEmotionalLanguageAnswers" />
-      <h5>Emocjonalny język</h5>
-    </div>
-    <modal :show="emo" @close="emo=false">
-      <div slot="1">
-        <h2>Emocjonalny język</h2>
-        <p>W tekstach informacyjnych granica między faktem a opinią powinna być wyraźnie zaznaczona. Jednak autorzy artykułów sięgają niekiedy po emocjonalny język (zwłaszcza w tytułach), by czytelnik w z góry określony sposób zinterpretował daną informację.</p>
-      </div>
-      <div slot="2">
-        <p>PORADA:
-          <ul>
-            <li>Sprawdź, czy w tytule pojawiają się silnie emocjonalne sformułowania, typu: “Masakra lewaków”, “Ostateczne uporanie się”, “Furia aktora”.</li>
-            <li>Uważaj na wyraźne oceny zachowań bądź postaci w tekście np. “Skandaliczne zachowanie”, “Niegodna postawa”, “Haniebne wystąpienie”.</li>
-            <li>Zwróć uwagę, czy autor tekstu odróżnił wyraźnie relacjonowanie faktów od opinii. </li>
-          </ul>
-        </p>
-      </div>
-    </modal>
-
     <div @click="bait=true" class="vulnerability">
       <pie-chart :textPercent="true" :numerator="numOfCorrectClickbaitAnswers" :denominator="numOfClickbaitAnswers" />
       <h5>Clickbait</h5>
@@ -67,35 +47,9 @@
       </div>
     </modal>
 
-    <div @click="lie=true" class="vulnerability">
-      <pie-chart :textPercent="true" :numerator="numOfCorrectFakeNewsAnswers" :denominator="numOfFakeNewsAnswers" />
-      <h5>Fałszywe treści</h5>
-    </div>
-    <modal :show="lie" @close="lie=false">
-      <div slot="1">
-        <h2>Fałszywe treści</h2>
-        <p>Terminem tym określa się całkowicie wymyślone lub zmanipulowane informacje przypominające wiarygodne dziennikarstwo. Twórcy fake newsów chcą przyciągnąć uwagę odbiorców, by zrealizować z góry założony cel, np. wygenerować zysk lub przekonać do swoich poglądów</p>
-      </div>
-      <div slot="2">
-        <p>PORADA:
-          <ul>
-            <li>
-              Zwróć uwagę na adres strony www, logotyp oraz szatę graficzną.
-            </li>
-            <li>
-              Przeczytaj sekcję o “nas” oraz zweryfikuj profil osoby publikującej.
-            </li>
-            <li>
-              Sprawdź czy, w artykule są podane źródła i czy występują cytaty.
-            </li>
-          </ul>
-        </p>
-      </div>
-    </modal>
-
     <div @click="manipulation=true" class="vulnerability">
       <pie-chart :textPercent="true" :numerator="numOfCorrectImageManipulationAnswers" :denominator="numOfImageManipulationAnswers" />
-      <h5>Manipulację obrazem</h5>
+      <h5>Manipulacja obrazem</h5>
     </div>
     <modal :show="manipulation" @close="manipulation=false">
       <div slot="1">
@@ -124,6 +78,52 @@
               <li>
                 Do uzyskania tych informacji przydatne może być odwrócone wyszukiwanie obrazu przez images.google.com.
               </li>
+          </ul>
+        </p>
+      </div>
+    </modal>
+
+    <div @click="emo=true" class="vulnerability">
+      <pie-chart :textPercent="true" :numerator="numOfCorrectEmotionalLanguageAnswers" :denominator="numOfEmotionalLanguageAnswers" />
+      <h5>Emocjonalny język</h5>
+    </div>
+    <modal :show="emo" @close="emo=false">
+      <div slot="0">
+        <h2>Emocjonalny język</h2>
+        <p>W tekstach informacyjnych granica między faktem a opinią powinna być wyraźnie zaznaczona. Jednak autorzy artykułów sięgają niekiedy po emocjonalny język (zwłaszcza w tytułach), by czytelnik w z góry określony sposób zinterpretował daną informację.</p>
+      </div>
+      <div slot="1">
+        <p>PORADA:
+          <ul>
+            <li>Sprawdź, czy w tytule pojawiają się silnie emocjonalne sformułowania, typu: “Masakra lewaków”, “Ostateczne uporanie się”, “Furia aktora”.</li>
+            <li>Uważaj na wyraźne oceny zachowań bądź postaci w tekście np. “Skandaliczne zachowanie”, “Niegodna postawa”, “Haniebne wystąpienie”.</li>
+            <li>Zwróć uwagę, czy autor tekstu odróżnił wyraźnie relacjonowanie faktów od opinii. </li>
+          </ul>
+        </p>
+      </div>
+    </modal>
+
+    <div @click="lie=true" class="vulnerability">
+      <pie-chart :textPercent="true" :numerator="numOfCorrectFakeNewsAnswers" :denominator="numOfFakeNewsAnswers" />
+      <h5>Fake news</h5>
+    </div>
+    <modal :show="lie" @close="lie=false">
+      <div slot="0">
+        <h2>Fake news</h2>
+        <p>Terminem tym określa się całkowicie wymyślone lub zmanipulowane informacje przypominające wiarygodne dziennikarstwo. Twórcy fake newsów chcą przyciągnąć uwagę odbiorców, by zrealizować z góry założony cel, np. wygenerować zysk lub przekonać do swoich poglądów</p>
+      </div>
+      <div slot="1">
+        <p>PORADA:
+          <ul>
+            <li>
+              Zwróć uwagę na adres strony www, logotyp oraz szatę graficzną.
+            </li>
+            <li>
+              Przeczytaj sekcję o “nas” oraz zweryfikuj profil osoby publikującej.
+            </li>
+            <li>
+              Sprawdź czy, w artykule są podane źródła i czy występują cytaty.
+            </li>
           </ul>
         </p>
       </div>
